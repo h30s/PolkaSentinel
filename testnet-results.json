@@ -1,20 +1,20 @@
 {
-  "network": "polkadotHub",
-  "timestamp": "2026-03-19T09:11:43.056Z",
+  "network": "hardhat",
+  "timestamp": "2026-03-19T09:21:42.040Z",
   "transactions": {
-    "fund_vulnerable": "0x55169a07a02971c8d234498f8d412a890e86337b0176a04ae5106ee80b060796",
-    "fund_protected": "0xf1eecb7caae2aff6c1898afa7a9e1ce8fb595189b7ae1012fdfb28fd31ab727c",
-    "normal_withdrawal": "0x0760c86903931318e7a096a2a1e4c3abb18faef70bedd4303373336fcf5c10c5",
-    "normal_unprotected": "0xef8ff1c80bb1913db36482206bd63368bfa513631ec9eec158627cc0f279a5aa",
-    "attack_vulnerable": "0x8b75df8848bcdc8a9da2f946b533f1418e040e8d65e2035a25756dbb72149e45",
-    "attack_protected": "0x0956215ff1a8728c973214b5b3e06b6c753f3403f29fe1cf704fc16a2f973d72",
-    "post_attack_withdrawal": "0x6ac45439450307158ccff6feb135ee0e64523b5b8c0be030af9a2fe16c467d6f"
+    "fund_vulnerable": "0xaf560f4874083ad66bfba3a6ed7e491c45764efe9a735d89849420e0523ab0fe",
+    "fund_protected": "0x1674cb33e0c6ff0a6865ccdc87a9661e3751beb1b10429c331d7c5dfbd3b7331",
+    "normal_withdrawal": "0xca60dee25b0ef408664479dd4e02140e6c095a13890bbcc9666b9aa40beb6aa1",
+    "normal_unprotected": "0x9d454c90d38f11a95cf69a69653aca446bee05495342506b7cedcd5d6179113c",
+    "attack_vulnerable": "0xf86301edddf1764bdaed779d90de20c3927393825c490268e200dfc6de3edebf",
+    "attack_protected": "0x46009665fd353eba3afc7d47c052db4a0115bed9bba75546a88bac8e1d52fb02",
+    "post_attack_withdrawal": "0x43209ca9e43b94c300b0569bbbbb6a1a04962e7e57b5287512e577baa9f778a6"
   },
   "gas": {
-    "protected_withdrawal": "107314",
-    "unprotected_withdrawal": "1492",
-    "attack_vulnerable": "91002",
-    "attack_protected": "151227"
+    "protected_withdrawal": "172664",
+    "unprotected_withdrawal": "40143",
+    "attack_vulnerable": "192927",
+    "attack_protected": "288046"
   },
   "results": {
     "vulnerable_vault_drained": true,

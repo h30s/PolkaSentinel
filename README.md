@@ -20,6 +20,30 @@ A real-time security engine that detects and blocks DeFi exploits using a decisi
 **Deployer:** `0x9574eB0855781c02f64C562ffF7064d2C6047DF8`
 **Deployed:** March 19, 2026
 
+### Live Testnet Transaction Proofs
+
+All transactions executed on Polkadot Hub TestNet (Chain ID: 420420417):
+
+| Action | Transaction Hash | Result |
+|---|---|---|
+| Fund Vulnerable Vault (10 ETH) | `0x55169a07a02971c8d234498f8d412a890e86337b0176a04ae5106ee80b060796` | Success |
+| Fund Protected Vault (10 ETH) | `0xf1eecb7caae2aff6c1898afa7a9e1ce8fb595189b7ae1012fdfb28fd31ab727c` | Success |
+| Normal Withdrawal (Protected) | `0x0760c86903931318e7a096a2a1e4c3abb18faef70bedd4303373336fcf5c10c5` | SAFE |
+| Normal Withdrawal (Vulnerable) | `0xef8ff1c80bb1913db36482206bd63368bfa513631ec9eec158627cc0f279a5aa` | Success |
+| **Reentrancy Attack → Vulnerable** | `0x8b75df8848bcdc8a9da2f946b533f1418e040e8d65e2035a25756dbb72149e45` | **DRAINED: 9→5 ETH** |
+| **Reentrancy Attack → Protected** | `0x0956215ff1a8728c973214b5b3e06b6c753f3403f29fe1cf704fc16a2f973d72` | **BLOCKED: 9→9 ETH** |
+| Post-Attack Normal Withdrawal | `0x6ac45439450307158ccff6feb135ee0e64523b5b8c0be030af9a2fe16c467d6f` | SAFE — vault still operational |
+
+### Live Gas Report (Measured on Polkadot Hub TestNet)
+
+| Operation | Gas Used |
+|---|---|
+| Protected withdrawal | 107,314 gas |
+| Unprotected withdrawal | 1,492 gas |
+| Sentinel overhead | 105,822 gas |
+| Attack on vulnerable vault | 91,002 gas |
+| Attack on protected vault (blocked) | 151,227 gas |
+
 ---
 
 ## Problem
