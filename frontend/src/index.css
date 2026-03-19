@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1e293b #0a0f1a;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0a0f1a;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #1e293b;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+  }
+}
+
+@layer components {
+  .terminal-text {
+    @apply font-mono text-sentinel-safe;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+
+  .glow-safe {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 0 0 20px rgba(0, 255, 136, 0.4);
+  }
+
+  .glow-danger {
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.7), 0 0 20px rgba(255, 51, 102, 0.4);
+  }
+
+  .glow-warning {
+    text-shadow: 0 0 10px rgba(255, 170, 0, 0.7), 0 0 20px rgba(255, 170, 0, 0.4);
+  }
+
+  .card {
+    @apply bg-sentinel-surface border border-sentinel-border rounded-xl p-6;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-sentinel-bg bg-sentinel-safe
+           hover:bg-opacity-90 transition-all duration-300
+           shadow-[0_0_15px_rgba(0,255,136,0.3)]
+           hover:shadow-[0_0_25px_rgba(0,255,136,0.5)]
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none;
+  }
+
+  .btn-danger {
+    @apply px-6 py-3 rounded-lg font-semibold text-white bg-sentinel-danger
+           hover:bg-opacity-90 transition-all duration-300
+           shadow-[0_0_15px_rgba(255,51,102,0.3)]
+           hover:shadow-[0_0_25px_rgba(255,51,102,0.5)]
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold text-sentinel-safe
+           border border-sentinel-safe bg-transparent
+           hover:bg-sentinel-safe hover:bg-opacity-10 transition-all duration-300
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 rounded-lg text-sentinel-muted hover:text-sentinel-text
+           hover:bg-white/5 transition-all duration-200 font-medium text-sm;
+  }
+
+  .nav-link-active {
+    @apply px-4 py-2 rounded-lg text-sentinel-safe bg-sentinel-safe/10
+           border border-sentinel-safe/20 font-medium text-sm;
+  }
+
+  .scan-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff88, transparent);
+    animation: scanLine 2s linear infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #00ff88;
+}

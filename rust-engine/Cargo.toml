@@ -1,0 +1,16 @@
+[package]
+name = "polkasentinel-engine"
+version = "0.1.0"
+edition = "2021"
+description = "PolkaSentinel on-chain decision tree classifier for PVM/RISC-V"
+
+[lib]
+name = "polkasentinel_engine"
+path = "src/lib.rs"
+
+[features]
+default = ["std"]
+std = []
+
+[dev-dependencies]
+hex = "0.4"
