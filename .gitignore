@@ -8,5 +8,5 @@ coverage.json
 frontend/node_modules/
 frontend/dist/
 rust-engine/target/
-deployed-addresses.json
-testnet-results.json
+ignition/deployments/
+*.log

@@ -1,0 +1,11 @@
+{
+  "network": "polkadotHub",
+  "timestamp": "2026-03-19T08:59:44.024Z",
+  "deployer": "0x9574eB0855781c02f64C562ffF7064d2C6047DF8",
+  "contracts": {
+    "guardianProxy": "0xeEC1F62F2E03908f47Eb4d5fE7281fD25d387480",
+    "protectedVault": "0x0927a3c71cE3D3DFf2886236efA4622C2de31ECe",
+    "vulnerableVault": "0x02cDC030bd8917522f339F7faD40FCE2aaE990ee",
+    "reentrancyAttacker": "0xb225669E1B22C1296CA291cA17Eb45BCB54d47cd"
+  }
+}

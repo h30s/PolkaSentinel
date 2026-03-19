@@ -1,0 +1,26 @@
+{
+  "network": "polkadotHub",
+  "timestamp": "2026-03-19T09:11:43.056Z",
+  "transactions": {
+    "fund_vulnerable": "0x55169a07a02971c8d234498f8d412a890e86337b0176a04ae5106ee80b060796",
+    "fund_protected": "0xf1eecb7caae2aff6c1898afa7a9e1ce8fb595189b7ae1012fdfb28fd31ab727c",
+    "normal_withdrawal": "0x0760c86903931318e7a096a2a1e4c3abb18faef70bedd4303373336fcf5c10c5",
+    "normal_unprotected": "0xef8ff1c80bb1913db36482206bd63368bfa513631ec9eec158627cc0f279a5aa",
+    "attack_vulnerable": "0x8b75df8848bcdc8a9da2f946b533f1418e040e8d65e2035a25756dbb72149e45",
+    "attack_protected": "0x0956215ff1a8728c973214b5b3e06b6c753f3403f29fe1cf704fc16a2f973d72",
+    "post_attack_withdrawal": "0x6ac45439450307158ccff6feb135ee0e64523b5b8c0be030af9a2fe16c467d6f"
+  },
+  "gas": {
+    "protected_withdrawal": "107314",
+    "unprotected_withdrawal": "1492",
+    "attack_vulnerable": "91002",
+    "attack_protected": "151227"
+  },
+  "results": {
+    "vulnerable_vault_drained": true,
+    "protected_vault_safe": true,
+    "post_attack_operational": true,
+    "total_scanned": "3",
+    "total_blocked": "0"
+  }
+}
