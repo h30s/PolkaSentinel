@@ -1,29 +1,10 @@
-// Contract addresses — defaults from local deployment
+// Contract addresses — LIVE on Polkadot Hub TestNet
 export const CONTRACTS = {
-  GuardianProxy: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
-  ProtectedVault: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512',
-  VulnerableVault: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
-  ReentrancyAttacker: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+  GuardianProxy: '0xeEC1F62F2E03908f47Eb4d5fE7281fD25d387480',
+  ProtectedVault: '0x0927a3c71cE3D3DFf2886236efA4622C2de31ECe',
+  VulnerableVault: '0x02cDC030bd8917522f339F7faD40FCE2aaE990ee',
+  ReentrancyAttacker: '0xb225669E1B22C1296CA291cA17Eb45BCB54d47cd',
 };
-
-// Try to load deployed addresses at runtime (works with Vite dynamic import)
-async function loadDeployedAddresses() {
-  try {
-    const resp = await fetch('/deployed-addresses.json');
-    if (resp.ok) {
-      const deployed = await resp.json();
-      const c = deployed.contracts || deployed;
-      if (c.guardianProxy) CONTRACTS.GuardianProxy = c.guardianProxy;
-      if (c.protectedVault) CONTRACTS.ProtectedVault = c.protectedVault;
-      if (c.vulnerableVault) CONTRACTS.VulnerableVault = c.vulnerableVault;
-      if (c.reentrancyAttacker) CONTRACTS.ReentrancyAttacker = c.reentrancyAttacker;
-    }
-  } catch {
-    // Use default addresses
-  }
-}
-
-loadDeployedAddresses();
 
 export const ABIS = {
   GuardianProxy: [
@@ -50,9 +31,9 @@ export const ABIS = {
 };
 
 export const CHAIN_CONFIG = {
-  chainId: '0x7A69', // 31337 for Hardhat local
-  chainName: 'Hardhat Local',
-  rpcUrl: 'http://127.0.0.1:8545',
-  symbol: 'ETH',
+  chainId: '0x19100F61', // 420420417 for Polkadot Hub TestNet
+  chainName: 'Polkadot Hub TestNet',
+  rpcUrl: 'https://services.polkadothub-rpc.com/testnet',
+  symbol: 'PAS',
   decimals: 18,
 };

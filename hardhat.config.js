@@ -15,8 +15,8 @@ module.exports = {
   networks: {
     hardhat: {},
     polkadotHub: {
-      url: process.env.POLKADOT_HUB_RPC || "https://testnet-passet-hub-eth-rpc.polkadot.io",
-      chainId: parseInt(process.env.POLKADOT_HUB_CHAIN_ID || "420420421"),
+      url: "https://services.polkadothub-rpc.com/testnet",
+      chainId: 420420417,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
   },
